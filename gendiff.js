@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { Command }from 'commander';
-import parseFile from './fileParser.js';
+import genDiff from './gen_diff.js';
 
 const program = new Command();
 
@@ -13,12 +13,8 @@ program
   .arguments('<filepath1> <filepath2>')
   .option('-f, --format <type>', 'output format')
   .action((filepath1, filepath2) => {
-    const file1Data = parseFile(filepath1);
-    const file2Data = parseFile(filepath2);
-
-    console.log('Сравнение файлов:');
-    console.log('file1:', file1Data);
-    console.log('file2:', file2Data);
+    const result = genDiff(filepath1, filepath2);
+    console.log(result);
   });
 
 program.parse(process.argv);
