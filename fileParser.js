@@ -1,4 +1,3 @@
-// parser.js
 import fs from 'fs';
 import path from 'path';
 
@@ -11,7 +10,7 @@ function parseFile(filePath) {
     return JSON.parse(fileContent);
   } catch (error) {
     console.error(`Ошибка при парсинге файла ${filePath}: ${error.message}`);
-    process.exit(1);
+    return null;
   }
 }
 

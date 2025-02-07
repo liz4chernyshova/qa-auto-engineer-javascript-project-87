@@ -10,9 +10,11 @@ const genDiff = (filepath1, filepath2) => {
   const diff = allKeys.map((key) => {
     if (!(key in file1Data)) {
       return `  + ${key}: ${file2Data[key]}`;
-    } else if (!(key in file2Data)) {
+    }
+    if (!(key in file2Data)) {
       return `  - ${key}: ${file1Data[key]}`;
-    } else if (file1Data[key] !== file2Data[key]) {
+    }
+    if (file1Data[key] !== file2Data[key]) {
       return `  - ${key}: ${file1Data[key]}\n  + ${key}: ${file2Data[key]}`;
     }
     return `    ${key}: ${file1Data[key]}`;
