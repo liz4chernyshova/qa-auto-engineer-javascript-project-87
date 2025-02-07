@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/liz4chernyshova/qa-auto-engineer-javascript-project-87/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/liz4chernyshova/qa-auto-engineer-javascript-project-87/actions)",
-  "main": "index.js",
+  "main": "gendiff.js",
   "type": "module",
   "bin": {
     "gendiff": "./gendiff.js"
