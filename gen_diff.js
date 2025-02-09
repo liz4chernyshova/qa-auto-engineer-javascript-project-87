@@ -1,26 +1,30 @@
 import _ from 'lodash';
-import parseFile from './fileParser.js';
+import parseFile from './parsers.js';
 
 const genDiff = (filepath1, filepath2) => {
-  const file1Data = parseFile(filepath1);
-  const file2Data = parseFile(filepath2);
+  const data1 = parseFile(filepath1);
+  const data2 = parseFile(filepath2);
 
-  const allKeys = _.sortBy([...new Set([...Object.keys(file1Data), ...Object.keys(file2Data)])]);
+  const keys = _.union(Object.keys(data1), Object.keys(data2));
+  const sortedKeys = _.sortBy(keys);
 
-  const diff = allKeys.map((key) => {
-    if (!(key in file1Data)) {
-      return `  + ${key}: ${file2Data[key]}`;
+  const diff = sortedKeys.map((key) => {
+    if (!Object.prototype.hasOwnProperty.call(data1, key)) {
+      return `  + ${key}: ${data2[key]}`;
     }
-    if (!(key in file2Data)) {
-      return `  - ${key}: ${file1Data[key]}`;
-    }
-    if (file1Data[key] !== file2Data[key]) {
-      return `  - ${key}: ${file1Data[key]}\n  + ${key}: ${file2Data[key]}`;
-    }
-    return `    ${key}: ${file1Data[key]}`;
-  });
 
-  return diff.join('\n');
+    if (!Object.prototype.hasOwnProperty.call(data2, key)) {
+      return `  - ${key}: ${data1[key]}`;
+    }
+
+    if (data1[key] !== data2[key]) {
+      return `  - ${key}: ${data1[key]}\n  + ${key}: ${data2[key]}`;
+    }
+
+    return `    ${key}: ${data1[key]}`;
+  }).join('\n');
+
+  return `{\n${diff}\n}`;
 };
 
 export default genDiff;

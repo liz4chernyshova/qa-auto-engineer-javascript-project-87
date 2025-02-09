@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 function compareJsonFiles(file1, file2) {
   const json1 = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '__fixtures__', file1), 'utf-8'));
