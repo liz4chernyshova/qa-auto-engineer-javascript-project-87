@@ -19,7 +19,7 @@ Gendiff - утилита, определяющая разницу между д�
    `gendiff filepath1.yml filepath2.yml`
 
 4. Плоский формат:
-   vgendiff --format plain filepath1.json filepath2.json`
+   `gendiff --format plain filepath1.json filepath2.json`
 
 5. JSON-формат:
    `gendiff --format json filepath1.json filepath2.json`
