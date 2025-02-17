@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1739822797816" clover="3.2.0">
+  <project timestamp="1739822797817" name="All files">
+    <metrics statements="64" coveredstatements="56" conditionals="49" coveredconditionals="35" methods="19" coveredmethods="18" elements="132" coveredelements="109" complexity="0" loc="64" ncloc="64" packages="2" files="7" classes="7"/>
+    <package name="src">
+      <metrics statements="25" coveredstatements="22" conditionals="17" coveredconditionals="12" methods="6" coveredmethods="6"/>
+      <file name="gen_diff.js" path="/mnt/c/Users/79645/Desktop/hexlet-git/qa-auto-engineer-javascript-project-87/src/gen_diff.js">
+        <metrics statements="12" coveredstatements="11" conditionals="12" coveredconditionals="10" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="40" type="cond" truecount="4" falsecount="2"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="40" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="13" count="32" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="16" type="stmt"/>
+        <line num="16" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+      </file>
+      <file name="index.js" path="/mnt/c/Users/79645/Desktop/hexlet-git/qa-auto-engineer-javascript-project-87/src/index.js">
+        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="8" count="16" type="stmt"/>
+        <line num="10" count="16" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+      </file>
+      <file name="parsers.js" path="/mnt/c/Users/79645/Desktop/hexlet-git/qa-auto-engineer-javascript-project-87/src/parsers.js">
+        <metrics statements="6" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="16" type="cond" truecount="2" falsecount="2"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.formatters">
+      <metrics statements="39" coveredstatements="34" conditionals="32" coveredconditionals="23" methods="13" coveredmethods="12"/>
+      <file name="index.js" path="/mnt/c/Users/79645/Desktop/hexlet-git/qa-auto-engineer-javascript-project-87/src/formatters/index.js">
+        <metrics statements="6" coveredstatements="5" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="8" type="cond" truecount="3" falsecount="1"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="json.js" path="/mnt/c/Users/79645/Desktop/hexlet-git/qa-auto-engineer-javascript-project-87/src/formatters/json.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+      </file>
+      <file name="plain.js" path="/mnt/c/Users/79645/Desktop/hexlet-git/qa-auto-engineer-javascript-project-87/src/formatters/plain.js">
+        <metrics statements="16" coveredstatements="15" conditionals="11" coveredconditionals="7" methods="5" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="6" type="cond" truecount="2" falsecount="2"/>
+        <line num="3" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="8" type="cond" truecount="3" falsecount="1"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+      </file>
+      <file name="stylish.js" path="/mnt/c/Users/79645/Desktop/hexlet-git/qa-auto-engineer-javascript-project-87/src/formatters/stylish.js">
+        <metrics statements="16" coveredstatements="13" conditionals="17" coveredconditionals="13" methods="6" coveredmethods="5"/>
+        <line num="1" count="20" type="cond" truecount="2" falsecount="1"/>
+        <line num="3" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="4" count="24" type="cond" truecount="3" falsecount="1"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="20" type="stmt"/>
+        <line num="15" count="20" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

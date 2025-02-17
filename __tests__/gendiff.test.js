@@ -1,24 +1,23 @@
-import path from 'path';
-import genDiff from '../gendiff.js';
+import genDiff from '../src/index.js';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+import { readFileSync } from 'fs';
 
-const getFixturePath = (filename) => path.resolve(__dirname, '../__fixtures__', filename);
+const filename = fileURLToPath(import.meta.url);
+const dirName = dirname(filename);
+const readFile = (nameOfFile) => readFileSync(resolve(dirName, '..', '__fixtures__', nameOfFile), 'utf-8');
 
-test.each([
-  ['file1.json', 'file2.json'],
-  ['file1.yml', 'file2.yml'],
-])('should return correct diff for files', (file1, file2) => {
-  const filepath1 = getFixturePath(file1);
-  const filepath2 = getFixturePath(file2);
+const cases = [
+  ['__fixtures__/file1.json', '__fixtures__/file2.json', readFile('stylish.txt')],
+  ['__fixtures__/file1.yml', '__fixtures__/file2.yml', readFile('stylish.txt')],
+  ['__fixtures__/file1.json', '__fixtures__/file2.json', readFile('stylish.txt'), 'stylish'],
+  ['__fixtures__/file1.yml', '__fixtures__/file2.yml', readFile('stylish.txt'), 'stylish'],
+  ['__fixtures__/file1.json', '__fixtures__/file2.json', readFile('plain.txt'), 'plain'],
+  ['__fixtures__/file1.yml', '__fixtures__/file2.yml', readFile('plain.txt'), 'plain'],
+  ['__fixtures__/file1.json', '__fixtures__/file2.json', readFile('json.txt'), 'json'],
+  ['__fixtures__/file1.yml', '__fixtures__/file2.yml', readFile('json.txt'), 'json'],
+];
 
-  const expected = `{
-    - follow: false
-      host: hexlet.io
-    - proxy: 123.234.53.22
-    - timeout: 50
-    + timeout: 20
-    + verbose: true
-  }`;
-
-  const result = genDiff(filepath1, filepath2);
-  expect(result).toBe(expected);
+test.each(cases)('compares two files', (a, b, result, format = 'stylish') => {
+  expect(genDiff(a, b, format).trim()).toBe(result.trim());
 });
