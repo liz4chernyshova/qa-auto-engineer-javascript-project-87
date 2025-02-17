@@ -10,7 +10,9 @@ const stringify = (value, depth = 1) => {
 
 const getStylishFormat = (diffTree) => {
   const iter = (node, depth = 1) => node
-    .flatMap(({ status, key, value, value1, value2, children }) => {
+    .flatMap(({
+      status, key, value, value1, value2, children,
+    }) => {
       const indent = getIndent(depth);
       if (status === 'nested') return `${indent} ${key}: ${iter(children, depth + 1)}`;
       if (status === 'deleted') return `${indent}- ${key}: ${stringify(value, depth + 1)}`;
@@ -18,7 +20,7 @@ const getStylishFormat = (diffTree) => {
       if (status === 'changed') {
         return [
           `${indent}- ${key}: ${stringify(value1, depth + 1)}`,
-          `${indent}+ ${key}: ${stringify(value2, depth + 1)}`
+          `${indent}+ ${key}: ${stringify(value2, depth + 1)}`,
         ];
       }
       return `${indent}  ${key}: ${stringify(value, depth + 1)}`;

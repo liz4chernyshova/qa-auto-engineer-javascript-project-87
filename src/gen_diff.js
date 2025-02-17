@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 const getDiff = (data1, data2) => {
   const keys = [...new Set([...Object.keys(data1), ...Object.keys(data2)])].sort();
 
@@ -16,7 +14,9 @@ const getDiff = (data1, data2) => {
     if (data1[key] === data2[key]) {
       return { status: 'unchanged', key, value: data1[key] };
     }
-    return { status: 'changed', key, value1: data1[key], value2: data2[key] };
+    return {
+      status: 'changed', key, value1: data1[key], value2: data2[key],
+    };
   });
 };
 
