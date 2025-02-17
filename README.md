@@ -10,18 +10,18 @@ Gendiff - утилита, определяющая разницу между д�
 ### Для установки и запуска проекта выполните следующее: ###
 
 1. Установите пакет:
-   npm install .
+   `npm install .`
 
 2. Справочная информация по утилите:
-   gendiff -h
+   `gendiff -h`
 
 3. Сравнение файлов:
-   gendiff filepath1.yml filepath2.yml
+   `gendiff filepath1.yml filepath2.yml`
 
 4. Плоский формат:
-   gendiff --format plain filepath1.json filepath2.json
+   vgendiff --format plain filepath1.json filepath2.json`
 
 5. JSON-формат:
-   gendiff --format json filepath1.json filepath2.json
+   `gendiff --format json filepath1.json filepath2.json`
 
 [![asciicast](https://asciinema.org/a/zXGOD0PbtZ1De0Ru0ZI72cL56.svg)](https://asciinema.org/a/zXGOD0PbtZ1De0Ru0ZI72cL56)
