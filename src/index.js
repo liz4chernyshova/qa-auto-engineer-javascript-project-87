@@ -7,7 +7,10 @@ import getFormat from './formatters/index.js';
 
 const getFileContent = (path) => readFileSync(resolve(cwd(), path), 'utf-8');
 
-const getExtension = (path) => path.split('.').pop();
+const getExtension = (filename) => {
+  const match = filename.match(/\.([^.]+)$/);
+  return match ? match[1] : '';
+};
 
 export default (filepath1, filepath2, format = 'stylish') => {
   const fileContent1 = getFileContent(filepath1);

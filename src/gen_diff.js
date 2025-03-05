@@ -1,7 +1,8 @@
 const getDiff = (data1, data2) => {
-  const keys = [...new Set([...Object.keys(data1), ...Object.keys(data2)])].sort();
+  const keys = [...new Set([...Object.keys(data1), ...Object.keys(data2)])];
+  const sortedKeys = [...keys].sort();
 
-  return keys.map((key) => {
+  return sortedKeys.map((key) => {
     if (data1[key] && data2[key] && typeof data1[key] === 'object' && typeof data2[key] === 'object') {
       return { status: 'nested', key, children: getDiff(data1[key], data2[key]) };
     }
