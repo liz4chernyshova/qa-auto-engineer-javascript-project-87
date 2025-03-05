@@ -1,5 +1,6 @@
 const getDiff = (data1, data2) => {
   const keys = [...new Set([...Object.keys(data1), ...Object.keys(data2)])];
+  // eslint-disable-next-line fp/no-mutating-methods
   const sortedKeys = [...keys].sort();
 
   return sortedKeys.map((key) => {
